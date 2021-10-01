@@ -3,7 +3,11 @@ Let $a = 5$ and $b = -3$.
 
 \begin{parts}
 
-\part[1]
+\part
+
+\begin{subparts}
+
+\subpart[1]
 Find $a + b$.
 
 \begin{EnvFullwidth}
@@ -14,10 +18,6 @@ We have
 \]
 \end{solutionorgrid}
 \end{EnvFullwidth}
-
-\part
-
-\begin{subparts}
 
 \subpart[1]
 Find $2a \times 3b$.
@@ -33,24 +33,41 @@ We have
 \end{solutionorgrid}
 \end{EnvFullwidth}
 
+\end{subparts}
+
+\uplevel{Let $y = \sin(x)$ and let $g(x) = x^3 + 2x$.}
+
+\part
+
+\begin{subparts}
+
 \subpart[2]
+Find $\diff{y}{x}$.
 
 \begin{EnvFullwidth}
-\begin{solutionorgrid}[2in]
-
+\begin{solutionorgrid}[1in]
+We have
+\[
+    \diff{y}{x} = \diff{}{x}(\sin(x)) = \cos(x).
+\]
 \end{solutionorgrid}
 \end{EnvFullwidth}
 
 \subpart[2]
+Evaluate $\displaystyle{\int_0^1 g(x) \dif x}$.
 
 \begin{EnvFullwidth}
-\begin{solutionorgrid}[2.5in]
-
+\begin{solutionorgrid}[2in]
+We have
+\begin{align*}
+    \int_0^1 g(x) \dif x &= \int_0^1 x^3 + 2x \dif x \\
+    &= \Eval{\frac{1}{4}x^4 + x^2}{0}{1} \\
+    &= \frac{1}{4} + 1 - 0 \\
+    &= \frac{5}{4}.
+\end{align*}
 \end{solutionorgrid}
 \end{EnvFullwidth}
 
 \end{subparts}
-
-\part[4]
 
 \end{parts}
