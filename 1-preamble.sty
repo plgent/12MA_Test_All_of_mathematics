@@ -1,0 +1,218 @@
+%%% Font packages
+
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{upgreek}
+
+%%% Layout packages
+
+\usepackage{kantlipsum}
+\usepackage{lastpage}
+\usepackage{multicol}
+
+%%% Figures, tables, captions, lists packages
+
+\usepackage{booktabs}
+\usepackage{caption}
+\captionsetup{
+	format=plain,
+	labelfont=bf,
+	justification=centering,
+}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{graphicx}
+
+%%% Maths and science packages
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{cancel}
+\renewcommand\CancelColor{\color{red}}
+\usepackage{dashbox}
+\usepackage[thinc]{esdiff}
+\usepackage{esvect}
+\renewcommand\vec{\mathbf}
+\usepackage{polynom}
+\usepackage{siunitx}
+\usepackage{systeme}
+\usepackage{xfrac}
+% \usepackage[version=4]{mhchem} % Uncomment if chemistry needed.
+% \usepackage{chemmacros}
+% \chemsetup{
+% 	formula=mhchem,
+% 	modules=reactions,
+% 	greek=upgreek,
+% }
+% \usepackage{chemfig}
+% \setchemfig{
+% 	atom sep=1.8em,
+% }
+
+%%% Drawing packages
+
+\usepackage{tikz}
+\usetikzlibrary{
+    calc,
+    patterns,
+    positioning,
+    tikzmark,
+}
+\tikzset{
+    font=\footnotesize,
+    >=stealth,
+    vector/.style={
+        semithick,
+        ->,
+        shorten >=1pt,
+    },
+}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{
+    compat=1.17,
+    my axis style/.style={
+        samples=200,
+        font=\footnotesize,
+        clip=false,
+        trig format plots=rad,
+        axis lines=middle,
+		axis line style=-stealth,
+		legend style={
+			legend pos=outer north east,
+			rounded corners=2pt,
+		},
+		label style={
+			at={(ticklabel* cs:1)},
+			anchor=west,
+		},
+		xlabel=$X$,
+		ylabel=$Y$,
+		},
+	every axis plot/.append style={
+	    semithick,
+	    >=stealth,
+	},
+}
+\usepackage{tkz-euclide}
+% \usepackage{tcolorbox} % Uncomment if coloured boxes are needed.
+% \tcbuselibrary{
+% 	vignette,
+% 	theorems,
+% }
+% \tcbset{
+%     my tcbox style/.style={
+%         enhanced,
+%         colback=green!10!white,
+%         colframe=green!75!black,
+%     	boxrule=1mm,
+%     	titlerule=0mm,
+%     	finish vignette={size=1mm},
+%     },
+% }
+
+%%% Macros
+
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\Bern}[2]{{#1}\sim\operatorname{Bernoulli}({#2})}
+\newcommand{\Bin}[3]{{#1}\sim\operatorname{Binomial}({#2,#3})}
+\newcommand{\C}{\mathbf{C}}
+\DeclareMathOperator\cis{cis}
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\Cov}[1]{\operatorname{\mathbf{Cov}}({#1})}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\dis}{d}
+\DeclareMathOperator\dom{dom}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\Eval}[3]{\Big[#1\Big]_{#2}^{#3}}
+\newcommand{\Exp}[1]{\operatorname{\mathbf{E}}({#1})}
+\DeclareMathOperator{\lcm}{lcm}
+\newcommand{\divides}{\mid}
+\let\Im\undefined
+\DeclareMathOperator{\Im}{Im}
+\newcommand{\keyword}{\textsf}
+\newcommand{\mat}[1]{#1}
+\newcommand{\mean}[1]{\overline{#1}}
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\Norm}[3]{{#1}\sim\operatorname{\mathcal{N}}({#2,#3})}
+\newcommand{\notdivides}{\nmid}
+\newcommand{\pfrac}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pkg}[1]{\texttt{#1}}
+\newcommand{\Prob}[1]{\operatorname{\mathbf{P}}({#1})}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+\DeclareMathOperator\ran{ran}
+\let\Re\undefined
+\DeclareMathOperator{\Re}{Re}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral#1\relax}}
+\newcommand{\SD}[1]{\operatorname{\mathbf{SD}}({#1})}
+\newcommand{\Var}[1]{\operatorname{\mathbf{Var}}({#1})}
+\newcommand{\Z}{\mathbf{Z}}
+
+%%% More complicated macros
+
+\newcommand{\oneast}{\bigskip\par{\large\centerline{*\medskip}}\par}%
+\newcommand{\threeast}{\bigskip\par\centerline{*\,*\,*}\medskip\par}%
+\newcommand{\triast}{\bigskip\par\noindent\parbox{\linewidth}{\centering\large{*}\\[-4pt]{*}\hskip 0.75em{*}}\bigskip\par}%
+
+\newcount\colveccount
+\newcommand*\colvec[1]{
+    \global\colveccount#1
+    \begin{pmatrix}
+    \colvecnext
+}
+\def\colvecnext#1{
+    #1
+    \global\advance\colveccount-1
+    \ifnum\colveccount>0
+        \\
+        \expandafter\colvecnext
+    \else
+        \end{pmatrix}
+    \fi
+}
+\newenvironment{amatrix}[1]{%
+    \left(\begin{array}{@{}*{#1}{r}|r@{}}
+}{%
+    \end{array}\right)
+}
+\newcommand{\AxisRotator}[1][rotate=0]{%
+    \tikz[
+        x=.6em, y=4ex,
+        line width=.2ex,
+        #1,
+    ] \draw (0,0) arc (-160:170:1 and 1);%
+}
+
+% https://tex.stackexchange.com/questions/353100/is-there-a-dotted-box-placeholder-symbol.
+
+\newcommand\dashedph[1][H]{\setlength{\fboxsep}{0pt}\setlength{\dashlength}{2.2pt}\setlength{\dashdash}{1.1pt}\dbox{\phantom{#1}}}
+
+% https://tex.stackexchange.com/questions/167925/how-to-make-maths-equations-start-at-the-left.
+
+\makeatletter
+\newcommand{\mathleft}{\@fleqntrue\@mathmargin0pt}
+\newcommand{\mathcenter}{\@fleqnfalse}
+\makeatother
+
+%%% Enunciations
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{notation}{Notation}
+\newtheorem{claim}{Claim}
+\newtheorem{step}{Step}
+
+\theoremstyle{remark}
+\newtheorem{example}{Example}
+\newtheorem*{remark}{Remark}
+
+%%% Referencing packages
+
+\usepackage{hyperref}
+\usepackage{varioref}

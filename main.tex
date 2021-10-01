@@ -1,0 +1,49 @@
+\documentclass[
+    a4paper,
+    12pt,
+    addpoints,
+    answers,
+    % noanswers,
+    hidelinks,
+]
+{exam}
+
+%%% Packages and macros
+
+\usepackage{1-preamble}
+
+%%% Page layout
+
+\input{2-layout}
+
+%%% Subject, paper and conditions
+
+\newcommand{\subject}{Year 12 Mathematics}
+\newcommand{\papername}{SAT: Learning Overleaf}
+\newcommand{\papernameshort}{Learning Overleaf}
+\newcommand{\timelimit}{60~Minutes}
+\newcommand{\conditions}{Notes, No Calculator}
+\newcommand{\paperrules}{\timelimit, \conditions}
+
+\begin{document}
+
+% \input{3-cover-letter}
+
+\begin{questions}
+
+\ifprintanswers
+\else
+\fullwidth{You and your supervisor must \textbf{write your names} to agree that exam conditions were satisfied.}
+\fi
+
+\input{5-simple-question}
+
+\end{questions}
+
+\vfill
+
+\input{8-grading-table}
+
+\input{9-formulae-sheet}
+
+\end{document}

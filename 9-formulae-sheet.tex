@@ -1,0 +1,84 @@
+\clearpage
+
+\fillwithgrid{3.5in}
+
+\threeast
+
+\begin{multicols}{2}
+\setlength\columnsep{1ex}
+\footnotesize
+\mathleft
+
+\subsubsection*{Circular functions}
+\label{sec:circular-functions}
+
+\begin{align*}
+    &\cos^2(A) + \sin^2(A) = 1 \\
+    &\cos(A \pm B) = \cos(A)\cos(B) \mp \sin(A)\sin(B) \\
+    &\sin(A \pm B) = \sin(A)\cos(B) \pm \sin(B)\cos(A) \\
+    &\tan(A \pm B) = \tfrac{\tan(A) \pm \tan(B)}{1 \mp \tan(A)\tan(B)} \\
+    &\cos(2A) = \cos^2(A) - \sin^2(A) \\
+    &\sin(2A) = 2\sin(A)\cos(A) \\
+    % &\tan(2A) = \tfrac{2\tan(A)}{1 - \tan^2(A)} \\
+    &2\cos(A)\cos(B) = \cos(A - B) + \cos(A + B) \\
+    &2\sin(A)\sin(B) = \cos(A - B) - \cos(A + B) \\
+    &2\cos(A)\cos(B) = \sin(A + B) - \sin(A - B) \\
+    &2\sin(A)\cos(B) = \sin(A + B) + \sin(A - B)
+\end{align*}
+
+\subsubsection*{Measurement}
+\label{sec:measurement}
+
+\begin{align*}
+    &\ell = r\theta && (\textrm{arc length}) \\
+    &\textrm{area} = \tfrac{1}{2} r^2\theta && (\textrm{area of sector}) \\
+    &c^2 = a^2 + b^2 - 2ab\cos(\gamma) && (\textrm{law of cosines}) \\
+    &\tfrac{a}{\sin(\alpha)} = \tfrac{b}{\sin(\beta)} = \tfrac{c}{\sin(\gamma)} && (\textrm{law of sines}) \\
+    &\textrm{area} = \tfrac{1}{2}ab\sin(\gamma) && (\textrm{area of triangle})
+\end{align*}
+\begin{center}
+    \begin{tikzpicture}
+    \tkzDefPoint(0,0){A}
+    \tkzDefShiftPoint[A](25:2.5){B}
+    \tkzDefShiftPoint[A](130:2.8){C}
+    \tkzDrawPolygon[semithick](A,B,C)
+    \tkzLabelPoints[font=\footnotesize](A,B)
+    \tkzLabelPoint[font=\footnotesize,left](C){$C$}
+    \tkzLabelSegment[above](B,C){$a$}
+    \tkzLabelSegment[below](C,A){$b$}
+    \tkzLabelSegment[below](A,B){$c$}
+    \tkzLabelAngle[pos=.3](B,A,C){$\alpha$}
+    \tkzLabelAngle[pos=.7](C,B,A){$\beta$}
+    \tkzLabelAngle[pos=.6](A,C,B){$\gamma$}
+    \end{tikzpicture}
+\end{center}
+
+\subsubsection*{Quadratic equations}
+\label{sec:quadratic-equations}
+
+\begin{align*}
+    &x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} && (\textrm{if } ax^2 + bx + c = 0)
+\end{align*}
+
+\subsubsection*{Linear algebra}
+\label{sec:linear-algebra}
+
+\begin{align*}
+    &\mat{A}^{-1} = \det(\mat{A})^{-1} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} && (\det(\mat{A}) \neq 0) \\
+    &d = \frac{\abs{Ax_0 + By_0 + Cz_0 + D}}{\sqrt{A^2 + B^2 + C^2}} && (\textrm{distance to } (x_0, y_0, z_0))
+\end{align*}
+
+\subsubsection*{Integration}
+\label{sec:integration}
+
+\begin{align*}
+    &\int \frac{\dif x}{\sqrt{1 - x^2}} = \arcsin(x) + c \\
+    &\int -\frac{\dif x}{\sqrt{1 - x^2}} = \arccos(x) + c \\
+    &\int \frac{\dif x}{1 + x^2} = \arctan(x) + c \\
+    &\int u \dif v = uv - \int v \dif u && (\textrm{IBP}) \\
+    &V = \pi\int_a^b y^2 \dif x && (\textrm{around } x{\textrm{-axis}}) \\
+    &V = \pi\int_{y = c}^{y = d} x^2 \dif y && (\textrm{around } y{\textrm{-axis}}) \\
+    &\ell = \int_a^b\sqrt{\vec{v} \cdot \vec{v}} \dif t && (\textrm{arc length})
+\end{align*}
+
+\end{multicols}

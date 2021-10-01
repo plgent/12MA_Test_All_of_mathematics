@@ -1,0 +1,33 @@
+%%% Width
+
+\extrawidth{.5in}
+
+%%% Header and footer (cover pages)
+
+\coverextraheadheight{2in}
+
+\coverheader{}{\bfseries\large Test Supervision Instructions}{}
+\coverfooter{}{\thepage}{}
+
+%%% Header and footer (main)
+
+\headrule
+\lhead[\bfseries Name:\\Supervisor:]{\bfseries OAC \subject}
+\chead{}
+\rhead[\bfseries \papername\\\paperrules]{\iflastpage{\bfseries Extra Space \& Mathematical Formul\ae}{\bfseries \papernameshort}}
+\lfoot{\scriptsize $\mathfrak{P}\mathfrak{L}\mathfrak{G}$\\\RNum{\year}}
+\cfoot{\iflastpage{Page \thepage\ of \pageref{LastPage}\\End of paper}{Page \thepage\ of \pageref{LastPage}}}
+\rfoot{\iflastpage{}{Score: \makebox[.375in]{\hrulefill} /\pointsonpage{\thepage}}}
+
+%%% Points
+
+\boxedpoints
+\pointsinrightmargin
+     
+%%% Solutions
+
+\SolutionEmphasis{
+	\small
+}       
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
